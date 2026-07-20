@@ -5,9 +5,14 @@ from datetime import timedelta
 import discord
 from discord import app_commands
 from discord.ext import commands
+import os
+import dotenv
+from dotenv import laod_dotenv
+
+load_dotenv()
+
 
 # ---------- Configuration ----------
-BOT_TOKEN = "MTUyNDYxNzQ4MTA5OTE0OTM0Mg.G9JFRG.5Eqeo6aAZ9kfEpJk_RGBaF5iARLCiMVfLl5OGo"  # <-- put your bot token here
 GUILD_ID = 1508632632152555611  # <-- put your guild id here as an integer
 GOOGLE_DOC_ID = "1Uuq9YirOfadx3a07n6_0Ev1F7Gz4Yf-t6FnNU87BHqQ"
 GOOGLE_DOC_TXT_URL = f"https://docs.google.com/document/d/{GOOGLE_DOC_ID}/export?format=txt"
@@ -296,4 +301,4 @@ async def on_ready():
     print("Commands synced.")
 
 if __name__ == "__main__":
-    bot.run(BOT_TOKEN)
+    bot.run(os.getenv("BOT_TOKEN"))
